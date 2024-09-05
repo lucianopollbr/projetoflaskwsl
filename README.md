@@ -20,16 +20,16 @@ Preparação no Ubuntu: (lembrar que é um sistema operacional completo que apen
 Criação do repositório:
     - no github.com criar o novo repositório com o "README.md" e a licença GLP3
     - no diretório raiz de trabalho "c:/xprojetos" executar o git clone
-        $git clone https://github.com/lucianopollbr/projetoflaskwsl.git 
+        $git clone https://github.com/usuário/projetox.git 
         $git checkout (deve ser a branch "main")
     - acrescentar os arquivos necessários ao desenvolvimento:
         $touch appsite.py
         $touch Dockerfile 
-        $cp -r origem/site /mnt/c/xprojetos/projetoflaskwsl
+        $cp -r origem/site /mnt/c/xprojetos/projetox
     - fazer stage, commit e push
         $git add .
         $git commit -m "texto explicativo"
-        $git origin main https://github.com/lucianopollbr/projetoflaskwsl.git
+        $git origin main https://github.com/usuário/projetox.git
         $git push origin main 
         
 
@@ -37,7 +37,6 @@ Criação do repositório:
 
 Ativação do Ambiente Virtual de Desenvolvimento Python:
 
-passo a passo para criar um ambiente virtual Python no diretório `c:/xprojetos/projetoflaskwsl` usando WSL2 com Ubuntu pelo terminal no VS Code.
 
 ### Passo a Passo:
 
@@ -49,7 +48,7 @@ passo a passo para criar um ambiente virtual Python no diretório `c:/xprojetos/
 2. **Navegar até o Diretório do Projeto:**
    - No terminal do VS Code, navegue até o diretório do seu projeto com o comando:
      ```bash
-     cd /mnt/c/xprojetos/projetoflaskwsl
+     cd /mnt/c/xprojetos/projetox
      ```
 
 3. **Criar o Ambiente Virtual:**
@@ -134,8 +133,31 @@ Acesso por SSH:
 ```bash
 ssh-keygen -t rsa -b 4096 -C "seu_email@example.com"
 cat ~/.ssh/id_rsa.pub | clip.exe
-git remote set-url origin git@github.com:<seu_usuario>/<seu_repositorio>.git
+git remote set-url origin <token>@github.com/<seu_usuario>/<seu_repositorio>.git
 git push origin main
 ```
+OBS: 
+
+oken de acesso pessoal:
+
+Outra opção é utilizar um token de acesso pessoal do GitHub. Tokens são como senhas temporárias que concedem acesso específico a partes do seu repositório.
+
+Veja como criar um token de acesso pessoal:
+
+Acesse as configurações da sua conta no GitHub.
+
+Vá para a aba "Developer settings" e depois em "Personal access tokens".
+
+Gere um novo token e conceda as permissões necessárias (por exemplo, "repo").
+
+Utilize o token gerado na URL do repositório remoto no Git. Por exemplo:
+
+Bash
+git remote set-url origin https://seu_token@github.com/seu_usuario/seu_repositorio.git
+Use o código com cuidado.
+
+Substitua seu_token pelo token gerado, seu_usuario e seu_repositorio pelos seus dados.
 
 ###############################################################################
+
+
